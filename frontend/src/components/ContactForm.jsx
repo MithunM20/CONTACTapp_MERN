@@ -1,32 +1,48 @@
-import React,{useState} from 'react'
-import Navbar from './NavBar';
+import React,{useEffect,useState} from "react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
 
-const ContactForm = ({addContact}) => {
-    const [name,setName]=useState('');
-    const [phone,setPhone]=useState('');
-    const [email,setEmail]=useState('');
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        addContact({name,phone,email});
-        setName('');
-        setPhone('');
-        setEmail('');
-    };
+const ContactForm=({addOrUpdateContact,editContact})=>{
+  const [name,setName]=useState('');
+  const [phone,setPhone]=useState('');
+  const [email,setEmail]=useState('');
+  const navigate=useNavigate();
 
-    const [setMenu] = useState("all-contacts");
-    const [searchTerm, setSearchTerm] = useState("");
-  return (
+  useEffect(()=>{
+    if(editContact){
+      setName(editContact.name);
+      setPhone(editContact.phone);
+      setEmail(editContact.email);
+    }
+  },[editContact]);
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    addOrUpdateContact({name,phone,email});
+    setName('');
+    setPhone('');
+    setEmail('');
+    navigate('/');
+  };
+
+  return(
     <div>
-      <Navbar setMenu={setMenu} setSearchTerm={setSearchTerm}/>
-
+      <Navbar/>
+      <h2>{editContact? 'Edit Contact' : 'Add Contact'}</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder='Name'  value={name} onChange={(e)=>setName(e.target.value)} required/>
-        <input type="text" placeholder='Phone' value={phone} onChange={(e)=>setPhone(e.target.value)} required/>
-        <input type="text" placeholder='Email' value={email} onChange={(e)=>setEmail(e.target.value)} required/>
-        <button type='submit'>Add Contact</button>
+        <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required />
+
+        <input type="text" placeholder="Phone" value={phone} onChange={(e)=>setPhone(e.target.value)} required/>
+
+        <input type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+
+        <button type="submit">
+          {editContact ? 'Update Contact' : 'Add Contact'}
+        </button>
       </form>
     </div>
-  )
-}
+  );
 
-export default ContactForm
+};
+
+export default ContactForm;
