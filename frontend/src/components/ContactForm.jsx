@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
+import '../ContactForm.css';
 
 const ContactForm=({addOrUpdateContact,editContact})=>{
   const [name,setName]=useState('');
@@ -28,6 +29,8 @@ const ContactForm=({addOrUpdateContact,editContact})=>{
   return(
     <div>
       <Navbar/>
+      <div className="contact-form-container">
+      
       <h2>{editContact? 'Edit Contact' : 'Add Contact'}</h2>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required />
@@ -40,6 +43,7 @@ const ContactForm=({addOrUpdateContact,editContact})=>{
           {editContact ? 'Update Contact' : 'Add Contact'}
         </button>
       </form>
+    </div>
     </div>
   );
 

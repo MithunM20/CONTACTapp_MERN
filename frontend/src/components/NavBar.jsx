@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import '../Navbar.css'
 import { Link } from "react-router-dom";
+import phone from '../assets/phone.png'
 
 const Navbar=({setSearchTerm,setMenu})=>{
   const [menu,setActiveMenu]=useState("all-contacts");
@@ -11,6 +12,9 @@ const Navbar=({setSearchTerm,setMenu})=>{
 
   return(
     <div className="navbar">
+      <div>
+        <img src={phone} alt="" />
+      </div>
       <ul className="navbar-menu">
         <li onClick={()=>handleMenuClick("all-contacts")}className={menu==="all-contacts" ? "active" : ""}>
           <Link to="/">All Contacts</Link>

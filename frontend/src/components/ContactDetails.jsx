@@ -1,27 +1,41 @@
-import React,{useEffect,useState} from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
+import React,{useEffect,useState} from "react";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
+import Navbar from "./NavBar";
+import '../ContactDetails.css'
 
-const ContactDetails = () => {
-    const {id}=useParams();
-    const [contact,setContact]=useState(null);
+const ContactDetails=()=>{
+  const {id}=useParams();
+  const [contact,setContact]=useState(null);
 
-    useEffect(()=>{
-        axios
-            .get(`http://localhost:4000/api/contacts/${id}`)
-            .then((response)=>setContact(response.data))
-            .catch((error)=>console.error('error fetching contact details',error));
-    },[id]);
+  useEffect(()=>{
+    fetchContactDetails();
+  });
 
-  return (
+  const fetchContactDetails=async()=>{
+    try {
+      const response=await axios.get(`http://localhost:4000/api/contacts/${id}`);
+      setContact(response.data);
+    } catch (error) {
+      console.error('Error fetching contact details',error);
+    }
+  };
+
+  if(!contact){
+    return <p>loading contact details</p>
+  }
+
+  return(
     <div>
-      <h2>{contact.name}</h2>
-      <div>
-        <p>Phone:{contact.phone}</p>
-        <p>Email:{contact.email}</p>
-      </div>
+      <Navbar/>
+      <div className="details">
+      <h2>Contact Details</h2>
+        <p><strong>Name:</strong> {contact.name}</p>
+        <p><strong>Phone:</strong> {contact.phone}</p>
+        <p><strong>Email:</strong> {contact.email}</p>
+    </div>
     </div>
   )
 }
 
-export default ContactDetails
+export default ContactDetails;

@@ -1,22 +1,68 @@
 
-
-.contact-card{
-    /* position: absolute; */
-    border: 2px solid black;
-    padding: 15px;
-    margin: 15px auto;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    width:500px;
-    text-align: left;
+h1{
+    text-align: center;
+    margin-top: 70px;
 }
-
-.contact-card h2{
-    color: #333;
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #e0e0e0;
+  padding: 15px 20px;
+  margin: 15px auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 500px;
 }
-
-.buttons{
-    /* position: absolute; */
-    bottom: 10px;
-    right: 10px;
+  
+.contact-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+  
+ 
+  
+.contact-card h2 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+  
+.contact-card h2 a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+  
+.contact-card h2 a:hover {
+  color: #34db71; 
+}
+  
+  
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+  
+.buttons button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+  
+.buttons button:hover {
+  transform: scale(1.1); 
+  opacity: 0.8;
+}
+  
+
+.buttons img {
+  width: 35px;
+  height: 35px;
+}
+  

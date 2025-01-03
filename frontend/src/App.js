@@ -5,6 +5,7 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import ContactDashboard from './components/ContactDashboard';
 import ContactForm from './components/ContactForm';
 import axios from 'axios';
+import ContactDetails from './components/ContactDetails';
 
 function App(){
   const [contacts,setContacts]=useState([]);
@@ -72,6 +73,10 @@ function App(){
                 element={<ContactForm
                           addOrUpdateContact={addOrUpdateContact}
                           editContact={editContact}/>}
+              />
+
+              <Route path='/contacts/:id'
+                element={<ContactDetails/>}
               />
             </Routes>
         </div>
