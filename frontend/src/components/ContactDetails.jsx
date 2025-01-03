@@ -14,7 +14,7 @@ const ContactDetails=()=>{
 
   const fetchContactDetails=async()=>{
     try {
-      const response=await axios.get(`https://contactapp-mern-lpzw.onrender.com`);
+      const response=await axios.get(`https://contactapp-mern-lpzw.onrender.com/api/contacts/${id}`);
       setContact(response.data);
     } catch (error) {
       console.error('Error fetching contact details',error);
