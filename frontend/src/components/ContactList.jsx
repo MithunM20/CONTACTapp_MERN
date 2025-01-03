@@ -6,19 +6,15 @@ import edit from '../assets/edit.png';
 
 const ContactList=({contacts,deleteContact,onEdit})=>{
   return(
-    <div>
-      <h1>All Contacts</h1>
+    <div className="bg">
       {contacts.map((contact)=>(
         <div key={contact._id} className="contact-card">
           <h2>
             <Link to={`/contacts/${contact._id}`}>{contact.name}</Link>
           </h2>
-          {/* <h2>{contact.name}</h2>
-          <p>{contact.phone}</p>
-          <p>{contact.email}</p> */}
           <div className="buttons">
-            <button onClick={()=>deleteContact(contact._id)}><img src={deleteIcon}/></button>
-            <button onClick={()=>onEdit(contact)}><img src={edit}/></button>
+            <button onClick={()=>deleteContact(contact._id)}><img src={deleteIcon} alt="delete"/></button>
+            <button onClick={()=>onEdit(contact)}><img src={edit} alt="edit"/></button>
           </div>
         </div>
       ))}

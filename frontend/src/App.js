@@ -10,6 +10,7 @@ import ContactDetails from './components/ContactDetails';
 function App(){
   const [contacts,setContacts]=useState([]);
   const [editContact,setEditContact]=useState(null);
+  const [searchTerm,setSearchTerm]=useState('');
 
   useEffect(()=>{
     fetchContacts();
@@ -57,6 +58,10 @@ function App(){
     }
   };
 
+  const filteredContacts=contacts.filter((contact)=>{
+    return contact.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+
   return(
     <div className='container'>
       <Router>
@@ -64,9 +69,11 @@ function App(){
             <Routes>
               <Route path='/' 
                 element={<ContactDashboard 
-                          contacts={contacts} 
+                          contacts={filteredContacts} 
                           deleteContact={deleteContact} 
-                          onEdit={handleEdit} />}
+                          onEdit={handleEdit}
+                          setSearchTerm={setSearchTerm}
+                          />}
               />
 
               <Route path='/addContact'

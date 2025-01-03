@@ -8,7 +8,11 @@ const Navbar=({setSearchTerm,setMenu})=>{
 
   const handleMenuClick=(menuItem)=>{
     setActiveMenu(menuItem);
-  }
+  };
+
+  const handleSearch=(e)=>{
+    setSearchTerm(e.target.value);
+  };
 
   return(
     <div className="navbar">
@@ -21,11 +25,11 @@ const Navbar=({setSearchTerm,setMenu})=>{
         </li>
 
         <li onClick={()=>handleMenuClick("add-contact")}className={menu==="add-contact" ? "active" : ""}>
-          <Link to="/addContact">Add Contact</Link>
+          <Link to="/addContact">Create Contact</Link>
         </li>
       </ul>
       <div className="navbar-right">
-        <input type="text" placeholder="Search" onChange={(e)=>setSearchTerm(e.target.value)} className="navbar-search-input" />
+        <input type="text" placeholder="Search Contacts" onChange={handleSearch} className="navbar-search-input" />
       </div>
     </div>
   )

@@ -30,20 +30,19 @@ const ContactForm=({addOrUpdateContact,editContact})=>{
     <div>
       <Navbar/>
       <div className="contact-form-container">
-      
-      <h2>{editContact? 'Edit Contact' : 'Add Contact'}</h2>
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required />
+        <h2>{editContact? 'EDIT CONTACT' : 'CREATE CONTACT'}</h2>
+        <form onSubmit={handleSubmit}>
+          <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required />
 
-        <input type="text" placeholder="Phone" value={phone} onChange={(e)=>setPhone(e.target.value)} required/>
+          <input type="text" placeholder="Phone" value={phone} onChange={(e)=>setPhone(e.target.value)} required/>
 
-        <input type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
+          <input type="text" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)} required />
 
-        <button type="submit">
-          {editContact ? 'Update Contact' : 'Add Contact'}
-        </button>
-      </form>
-    </div>
+          <button type="submit">
+            {editContact ? 'Update Contact' : 'Save'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 

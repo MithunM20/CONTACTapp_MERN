@@ -3,9 +3,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #57d5da; 
+  background-color: #38dc2f; 
   padding: 10px 20px;
-  height: 60px;
+  height: 100px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -34,24 +34,31 @@
 }
 .navbar-menu li a{
     text-decoration: none;
-    color: #ecf0f1;
+    color: #101011;
     font-weight: bold;
-    font-size: large;
+    font-size: 1.4rem;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
 }
 
 .navbar-menu li a:hover{
     color: #f31149;
 }
 
-.navbar-right {
+.navbar-right input{
     display: flex;
     align-items: center;
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    color: #3c444f;
+    background-color: #f3f4f6;
+    transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .navbar {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;

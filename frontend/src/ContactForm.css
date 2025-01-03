@@ -1,6 +1,6 @@
 .contact-form-container {
     font-family: 'Arial', sans-serif;
-    background-color: #f56868;
+    background-color: #4ff678;
     max-width: 500px;
     width: 90%;
     margin: 50px auto;
@@ -13,23 +13,23 @@
 .contact-form-container h2{
   color: #333333;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .contact-form-container form input{
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin: 10px 0;
-  border: 1px solid #d1d5db;
+  border: 2px solid #d1d5db;
   border-radius: 6px;
   font-size: 1rem;
-  color: #4b5563;
+  color: #282d35;
   background-color: #f3f4f6;
   transition: all 0.3s ease;
 }
 
 .contact-form-container form input:focus {
-  border-color: #1abc9c;
+  border-color: #bc1a1a;
   background-color: #ffffff;
   outline: none;
   box-shadow: 0 0 8px rgba(26, 188, 156, 0.2);
@@ -42,7 +42,7 @@
   border-radius: 6px;
   font-size: 1rem;
   font-weight: bold;
-  background-color: #1abc9c;
+  background-color: #bc7e1a;
   color: #1d1616;
   cursor: pointer;
   transition: all 0.3s ease;
