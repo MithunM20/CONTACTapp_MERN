@@ -18,7 +18,7 @@ function App(){
 
   const fetchContacts=async()=>{
     try {
-      const response=await axios.get('http://localhost:4000/api/contacts');
+      const response=await axios.get('https://contactapp-mern-lpzw.onrender.com/api/contacts');
       setContacts(response.data);
     } catch (error) {
       console.error('Error fetching contacts',error);
@@ -28,7 +28,7 @@ function App(){
   const addOrUpdateContact=async(contact)=>{
     if(editContact){
       try {
-        const response=await axios.put(`http://localhost:4000/api/contacts/${editContact._id}`,contact);
+        const response=await axios.put(`https://contactapp-mern-lpzw.onrender.com/api/contacts/${editContact._id}`,contact);
         setContacts(contacts.map((c)=>c._id===editContact._id?response.data:c));
         setEditContact(null)
       } catch (error) {
@@ -36,7 +36,7 @@ function App(){
       }
     }else{
       try {
-        const response=await axios.post('http://localhost:4000/api/contacts',contact);
+        const response=await axios.post('https://contactapp-mern-lpzw.onrender.com/api/contacts',contact);
         setContacts([...contacts,response.data]);
       } catch (error) {
         console.error('Error adding contact',error);
@@ -51,7 +51,7 @@ function App(){
 
   const deleteContact=async(id)=>{
     try {
-      await axios.delete(`http://localhost:4000/api/contacts/${id}`);
+      await axios.delete(`https://contactapp-mern-lpzw.onrender.com/api/contacts/${id}`);
       setContacts(contacts.filter((c)=>c._id!==id));
     } catch (error) {
       console.error('Error deleting contact',error);
