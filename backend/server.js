@@ -15,10 +15,9 @@ app.use(bodyparser.json());
 
 app.use('/api',contactRoutes);
 
-mongoose.connect(process.env.DB_URI,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-});
+mongoose.connect(process.env.DB_URI,{useNewUrlParser:true,useUnifiedTopology:true})
+    .then(()=>{console.log('Database Connection successfull..');})
+    .catch((error)=>{console.log("Error in mongodb connection",error);});
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is running on port ${process.env.PORT}`);
