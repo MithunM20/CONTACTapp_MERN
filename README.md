@@ -1,10 +1,11 @@
-Contact Management App
+## Contact Management App
 
 Easily manage your contacts with this web application built using 
 the MERN stack. The app allows users to create, view, update, 
 delete, and search for contacts efficiently.
 _________________________________________________________________
-Live Demo:https://lucent-zabaione-2abf11.netlify.app/
+## Live Demo:
+  https://lucent-zabaione-2abf11.netlify.app/
 _________________________________________________________________
 
 ## Features  
@@ -31,14 +32,14 @@ _________________________________________________________________
 git clone https://github.com/your-username/contact-management-app.git  
 cd contact-management-app  
 
-2. Frontend Setup
+### 2. Frontend Setup
 
 - Navigate to the frontend folder:cd frontend
 - Install dependencies:npm install
 - start the development sercer:npm start
 - The app will be available at http://localhost:3000.
 
-3.Backend Setup
+### 3.Backend Setup
 
 - Navigate to the backend folder:cd backend
 - Install dependencies:npm install
@@ -48,7 +49,7 @@ MONGO_URI=<Your MongoDB Connection String>
 
 __________________________________________________________________
 
-Testing the Application
+## Testing the Application
 
 1.Open the app at http://localhost:3000 after setting up the frontend and backend.
 
@@ -60,7 +61,7 @@ Testing the Application
   -Use the search bar presented in navbar to find contacts.
 ___________________________________________________________________
 
-Deployment
+## Deployment
 
 FrontEnd
   -Deployed on Netlify.To redeploy:
@@ -74,7 +75,7 @@ Backend
 
 ___________________________________________________________________
 
-Technologies Used
+## Technologies Used
 
 1.Frontend: React, React Router DOM, Axios
 2.Backend: Node.js, Express.js, MongoDB
@@ -82,7 +83,7 @@ Technologies Used
 4.Deployment: Netlify (Frontend), Render (Backend)
 ___________________________________________________________________
 
-Author
+## Author
 Mithun M. Nair
 MERN Stack Developer | Diploma in Computer Engineering
 
